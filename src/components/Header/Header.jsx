@@ -1,7 +1,9 @@
+import cls from './Header.module.css'
+
 function Header() {
   return (
-    <nav>
-      <div className='nav-wrapper'>
+    <nav className={cls.nav}>
+      <div>
         <a href='https//google.com' className='brand-logo'>
           React Movies
         </a>
