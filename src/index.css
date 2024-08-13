@@ -23,13 +23,13 @@ nav {
   align-items: center;
   padding-left: 1.2rem;
   height: 5vh;
-  background-color: aqua;
+  background-color: rgb(20, 187, 187);
 }
 
 main {
   flex: 1 1 auto;
   padding: 1.2rem;
-  background-color: bisque;
+  background-color: rgba(230, 137, 15, 0.904);
 }
 
 footer {
@@ -38,4 +38,10 @@ footer {
   justify-content: center;
   height: 5vh;
   background-color: green;
+}
+
+.movies {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(25vh, 1fr));
+  gap: 1rem;
 }
