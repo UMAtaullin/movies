@@ -20,7 +20,6 @@ body {
 main {
   flex: 1 1 auto;
   padding: 1.2rem;
-  background-color: rgba(230, 137, 15, 0.904);
 }
 
 footer {
@@ -40,3 +39,10 @@ nav {
   grid-template-columns: repeat(auto-fill, minmax(23vh, 1fr));
   gap: 1rem;
 }
+
+.search-btn {
+  position: absolute;
+  top: 0;
+  right: 1rem;
+}
+
