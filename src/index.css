@@ -17,15 +17,6 @@ body {
   min-height: 100vh;
 }
 
-nav {
-  display: flex;
-  justify-content: start;
-  align-items: center;
-  padding-left: 1.2rem;
-  height: 5vh;
-  background-color: rgb(20, 187, 187);
-}
-
 main {
   flex: 1 1 auto;
   padding: 1.2rem;
@@ -40,8 +31,12 @@ footer {
   background-color: green;
 }
 
+nav {
+  padding-left: 1rem;
+}
+
 .movies {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(25vh, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(23vh, 1fr));
   gap: 1rem;
 }
