@@ -1,5 +1,6 @@
 import React from 'react'
 import { Movies } from '../Movies'
+import { Preloader } from '../Preloader/Preloader'
 
 class Main extends React.Component {
   state = {
@@ -18,7 +19,7 @@ class Main extends React.Component {
         {
           movies.length ? (
             <Movies movies={this.state.movies}/>
-          ) : <h3>Loading...</h3>
+          ) : <Preloader/>
         }
       </main>
     )
