@@ -3,11 +3,15 @@ import React from 'react'
 class Search extends React.Component {
   state = {
     search: '',
+    type: 'all',
   }
-  handleKey = (e) => {
-    if (e.key === 'Enter') {
-      this.props.searchMovies(this.state.search)
+  handleKey = (event) => {
+    if (event.key === 'Enter') {
+      this.props.searchMovies(this.state.search, this.state.type)
     }
+  }
+  handleRadioChange = (event) => {
+    this.setState(() => ({ type: event.target.dataset.type }), () => {this.props.searchMovies(this.state.search, this.state.type)})
   }
   render() {
     return (
@@ -24,11 +28,49 @@ class Search extends React.Component {
                 onChange={(e) => this.setState({ search: e.target.value })}
                 onKeyDown={this.handleKey}
               />
-              <button 
+              <button
                 className='btn search-btn'
-                onClick={() => this.props.searchMovies(this.state.search)}>
+                onClick={() =>
+                  this.props.searchMovies(this.state.search, this.state.type)
+                }
+              >
                 Search
               </button>
+              <div className='radio-button'>
+                <label>
+                  <input
+                    className='with-gap'
+                    name='type'
+                    type='radio'
+                    data-type='all'
+                    onChange={this.handleRadioChange}
+                    checked={this.state.type === 'all'}
+                  />
+                  <span>all</span>
+                </label>
+                <label>
+                  <input
+                    className='with-gap'
+                    name='type'
+                    type='radio'
+                    data-type='movie'
+                    onChange={this.handleRadioChange}
+                    checked={this.state.type === 'movie'}
+                  />
+                  <span>movie</span>
+                </label>
+                <label>
+                  <input
+                    className='with-gap'
+                    name='type'
+                    type='radio'
+                    data-type='series'
+                    onChange={this.handleRadioChange}
+                    checked={this.state.type === 'series'}
+                  />
+                  <span>series</span>
+                </label>
+              </div>
             </div>
           </div>
         </form>
